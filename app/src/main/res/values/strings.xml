@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Image Search</string>
+    <string name="enterText">search image</string>
+    <string name="search">Search</string>
+    <string name="grid_view_item_content_description">image description</string>
+
+    <string name="title_activity_full_screen_image">Selected Image</string>
+</resources>
