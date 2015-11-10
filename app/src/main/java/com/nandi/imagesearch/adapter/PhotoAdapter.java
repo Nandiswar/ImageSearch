@@ -63,7 +63,8 @@ public class PhotoAdapter extends ArrayAdapter<Data> implements AbsListView.OnSc
         if(convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layoutResource, parent, false);
-            holder = new ViewHolder(convertView);
+            holder = new ViewHolder();
+            holder.imageView = (ImageView) convertView.findViewById(R.id.image);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -110,12 +111,8 @@ public class PhotoAdapter extends ArrayAdapter<Data> implements AbsListView.OnSc
         context.startActivity(intent);
     }
 
-    class ViewHolder {
+    static class ViewHolder {
         ImageView imageView;
-
-        public ViewHolder(View convertView) {
-            imageView = (ImageView) convertView.findViewById(R.id.image);
-        }
     }
 
     class PaginationRequestListener implements RequestListener<DataList> {
